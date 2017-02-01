@@ -61,7 +61,12 @@ class Html extends Dom
         $content = $body instanceof DOMNode ? $dom->saveHTML($body) : 'something failed';
         $emo->setHtml($content);
         $emo->setCss($newstyle);
-        $content = $emo->emogrifyBodyContent();
+        //TODO:Config to only return body.
+        if(true) {
+          $content = $emo->emogrifyBodyContent();
+        }else {
+          $content = $emo->emogrify();
+        }
       }
       file_put_contents($base_path.'-'.$i.'.html', $content);
       $contents[ $i ] = file_get_contents($base_path.'-'.$i.'.html');
