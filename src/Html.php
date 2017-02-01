@@ -16,7 +16,6 @@ class Html extends Dom
   public function __construct($pdf_file)
   {
     $this->getContents($pdf_file);
-
     return $this;
   }
 
@@ -47,13 +46,7 @@ class Html extends Dom
         $dom->loadHTML($content);
         $xpath = new DOMXPath($dom);
         $styles = $dom->saveHTML($xpath->query('//style')->item(0));
-        $newstyle = trim(preg_replace('/\s\s+/', ' ', $styles));
-        $newstyle = str_replace('<style type="text/css">', "", $newstyle);
-        $newstyle = str_replace('</style>', "", $newstyle);
-        $newstyle = str_replace('<!--', "", $newstyle);
-        $newstyle = str_replace('-->', "", $newstyle);
-        $newstyle = trim(preg_replace('/\s\s+/', ' ', $newstyle));
-        $newstyle = str_replace("\r\n","",$newstyle);
+        $newstyle = $this->cleanupCSS($styles);
         foreach ($xpath->query('//comment()') as $comment) {
           $comment->parentNode->removeChild($comment);
         }
@@ -68,11 +61,13 @@ class Html extends Dom
           $content = $emo->emogrify();
         }
       }
+      //TODO: save atcutal html
       file_put_contents($base_path.'-'.$i.'.html', $content);
       $contents[ $i ] = file_get_contents($base_path.'-'.$i.'.html');
     }
     $this->contents = $contents;
     $this->goToPage(1);
+    $this->remove_temp($outputDir);
   }
 
   public function goToPage($page = 1)
@@ -107,6 +102,10 @@ class Html extends Dom
     }
     return $content;
   }
+  public function remove_temp($dir)
+  {
+    File::deleteDirectory($dir);
+  }
 
   public function create_dir()
   {
@@ -118,6 +117,18 @@ class Html extends Dom
     }
   }
 
+  public function cleanupCSS($styles)
+  {
+    $newstyle = trim(preg_replace('/\s\s+/', ' ', $styles));
+    $newstyle = str_replace('<style type="text/css">', "", $newstyle);
+    $newstyle = str_replace('</style>', "", $newstyle);
+    $newstyle = str_replace('<!--', "", $newstyle);
+    $newstyle = str_replace('-->', "", $newstyle);
+    $newstyle = trim(preg_replace('/\s\s+/', ' ', $newstyle));
+    $newstyle = str_replace("\r\n","",$newstyle);
+    return $newstyle;
+  }
+  
   public function getCurrentPage()
   {
     return $this->current_page;
