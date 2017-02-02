@@ -1,6 +1,6 @@
 <?php
 
-namespace Gufy\PdfToHtml;
+namespace Thedigit\PdfToHtml;
 
 class Pdf
 {

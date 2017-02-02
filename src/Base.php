@@ -1,12 +1,12 @@
 <?php
 
-namespace Gufy\PdfToHtml;
+namespace Thedigit\PdfToHtml;
 
 /**
  * Class who can handle about converting pdf file to Html files
  * Please reserve an unprotected pdf files or uncopyrighted pdf files
  * @author Mochamad Gufron
- * @link   http://github.com/mgufrone
+ * @link   http://github.com/Thedigit
  * @since  v1.0
  *
  */

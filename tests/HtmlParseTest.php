@@ -1,6 +1,6 @@
 <?php
-use Gufy\PdfToHtml\Html,
-Gufy\PdfToHtml\Config;
+use Thedigit\PdfToHtml\Html,
+Thedigit\PdfToHtml\Config;
 class HtmlParseTest extends PHPUnit_Framework_TestCase
 {
   public function testConvertAndCatch()

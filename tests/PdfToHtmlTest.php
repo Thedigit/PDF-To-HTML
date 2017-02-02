@@ -1,7 +1,7 @@
 <?php
 
-use Gufy\PdfToHtml\Base as PdfToHtml,
- Gufy\PdfToHtml\Config;
+use Thedigit\PdfToHtml\Base as PdfToHtml,
+ Thedigit\PdfToHtml\Config;
 
 class PdfToHtmlTest extends \PHPUnit_Framework_TestCase
 {

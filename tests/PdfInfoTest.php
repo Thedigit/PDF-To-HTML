@@ -1,6 +1,6 @@
 <?php
-use Gufy\PdfToHtml\Pdf,
- Gufy\PdfToHtml\Config;
+use Thedigit\PdfToHtml\Pdf,
+ Thedigit\PdfToHtml\Config;
 
 class PdfInfoTest extends PHPUnit_Framework_TestCase
 {

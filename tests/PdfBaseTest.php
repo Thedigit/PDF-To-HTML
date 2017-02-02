@@ -1,8 +1,8 @@
 <?php
-use Gufy\PdfToHtml\Base,
- Gufy\PdfToHtml\Config,
- Gufy\PdfToHtml\Html,
- Gufy\PdfToHtml\Pdf;
+use Thedigit\PdfToHtml\Base,
+ Thedigit\PdfToHtml\Config,
+ Thedigit\PdfToHtml\Html,
+ Thedigit\PdfToHtml\Pdf;
 
 class PdfBaseTest extends PHPUnit_Framework_TestCase
 {
