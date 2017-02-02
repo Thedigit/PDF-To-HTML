@@ -1,5 +1,6 @@
 {
     "name": "thedigit/Pdf-To-Html",
+
     "description": "PDF to HTML converter with PHP using Poppler-utils",
     "license": "MIT",
     "authors": [
