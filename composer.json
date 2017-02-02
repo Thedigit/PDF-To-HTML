@@ -1,5 +1,5 @@
 {
-    "name": "thedigit/PdfToHtml",
+    "name": "thedigit/pdf-to-html",
     "description": "PDF to HTML converter with PHP using Poppler-utils",
     "license": "MIT",
     "authors": [
@@ -12,6 +12,7 @@
             "email": "emailme@joshuamartinez.me"
         }
     ],
+    "homepage": "https://github.com/Thedigit/pdf-to-html",
     "minimum-stability": "stable",
     "require": {
         "paquettg/php-html-parser": "~1",
@@ -24,11 +25,8 @@
     },
 
     "autoload": {
-      "psr-0": {
-           "Thedigit": "src"
-       },
        "psr-4": {
-           "Thedigit\\PdfToHtml\\": "src/"
+           "Thedigit\\PdfToHtml\\": "src"
        }
     }
 }
