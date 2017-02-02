@@ -24,8 +24,11 @@
     },
 
     "autoload": {
-        "psr-0": {
-            "Thedigit\\PdfToHtml": "src"
-        }
+      "psr-0": {
+           "Thedigit": "src"
+       },
+       "psr-4": {
+           "Thedigit\\PdfToHtml\\": "src/"
+       }
     }
 }
