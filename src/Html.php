@@ -31,6 +31,9 @@ class Html extends Dom
     $random_dir = uniqid();
     $this->create_dir();
     $outputDir = base_path().'/public/doc/output/'.$random_dir;
+    if (!file_exists($outputDir)) {
+      mkdir($outputDir, 0777, true);
+    }
     $pdf->setOutputDirectory($outputDir);
     $pdf->generate();
     $fileinfo = pathinfo($pdf_file);
@@ -128,7 +131,7 @@ class Html extends Dom
     $newstyle = str_replace("\r\n","",$newstyle);
     return $newstyle;
   }
-  
+
   public function getCurrentPage()
   {
     return $this->current_page;
